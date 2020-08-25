@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="./css/post.css">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header__wrapper">
+            <a href="./index.html" class="header__logo logo">
+                BlogWorld
+            </a>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <button id="add-post">Add new post</button>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#portfolio">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./blog.html" class="active">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#pages">
+                            Pages
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#about">
+                            About
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a href="./index.html#contact">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="row">
+        <section class="primary col-7" id="post">
+        </section>
+        <section class="references col-5" id="rightside-panel">
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper d-flex justify-content-between align-items-center">
+            <div class="footer__socials socials">
+                <a href="https://www.facebook.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-facebook.svg" type="image/svg+xml"
+                        class="icon icon__facebook"></object>
+                </a>
+                <a href="https://www.instagram.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-instagram.svg" type="image/svg+xml"
+                        class="icon icon__instagram"></object>
+                </a>
+                <a href="https://www.instagram.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-dribbble.svg" type="image/svg+xml"
+                        class="icon icon__dribbble"></object>
+                </a>
+            </div>
+            <a href="./index.html" class="footer__logo logo">
+                BlogWorld
+            </a>
+            <p class="footer__paragraph paragraph paragraph-small">©2019 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./js/postBuilder.js"></script>
+    <script src="./js/post.js"></script>
+    <script src="./js/new-post.js"></script>
+
+</body>
+
+</html>

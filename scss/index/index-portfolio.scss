@@ -1,0 +1,110 @@
+.portfolio {
+  max-width: $content-width;
+  margin: 0 auto 61px;
+  position: relative;
+
+  &__head {
+    margin-top: 17px;
+    padding: 16px 0 2px;
+  }
+
+  &__paragraph {
+    font-size: 15px;
+    line-height: 25px;
+    text-align: left;
+    margin: 22px auto;
+
+    &-light {
+      color: $main-light-color;
+      margin: -3px auto 31px;
+    }
+  }
+
+  &__section {
+    overflow: hidden;
+    position: relative;
+    // max-width: 1130px;
+  }
+
+  &__wrapper {
+    justify-content: start;
+    flex-wrap: unset;
+    transition: transform 1s ease-out;
+  }
+
+  &__container {
+    // width: 33.3%;
+    max-width: 372.66px;
+    // flex: 0 0 33.35%;
+    background-color: white;
+  }
+
+  &__post {
+    margin: 40px auto;
+    padding: 0;
+    max-width: 360px !important;
+    height: 243px;
+    flex: unset !important;
+
+    &-ocean {
+      background: url("../img/home-page/bg\ img1.png") no-repeat;
+    }
+
+    &-city {
+      background: url("../img/home-page/bg\ img2.png") no-repeat;
+    }
+
+    &-mountains {
+      background: url("../img/home-page/bg\ img\ 3.png") no-repeat;
+    }
+
+    &-hover:hover {
+      box-shadow: 0 5px 15px #979797;
+    }
+
+    // &:nth-child(2) {
+    //   margin: 40px 40px 0;
+    // }
+  }
+
+  &__button {
+    display: block;
+    margin: 108px auto 0;
+
+    &-nav {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    color: $main-light-color;
+    text-transform: uppercase;
+    font-weight: bold !important;
+    text-align: center !important;
+    line-height: 30px;
+    margin-top: 44px !important;
+    letter-spacing: 1.5px !important;
+    font-size: 18px !important;
+
+    &-btns {
+      margin-top: 100px !important;
+    }
+  }
+}
+
+.slider {
+  position: relative;
+  height: 300px !important;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  height: 243px !important;
+}
+#portfolio-toolbar {
+  position: absolute;
+  bottom: 45px;
+  left: calc(50% - 180px);
+  width: 700px;
+}
