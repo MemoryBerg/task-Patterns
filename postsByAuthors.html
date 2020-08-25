@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/postsByAuthors.css">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <div class="header__wrapper">
+            <a href="./index.html" class="header__logo logo">
+                BlogWorld
+            </a>
+            <nav class="header__nav">
+                <ul class="header__list">
+                    <li class="header__item">
+                        <button id="add-post">Add new post</button>
+                    </li>
+                    <li class="header__item" id="home">
+                        <a class="header__link" href="./index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#portfolio">
+                            Portfolio
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="./blog.html">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#pages">
+                            Pages
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#about">
+                            About
+                        </a>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__link" href="#contact">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="gallery" id="gallery">
+            <div class="menu menu__horizontal" id="menu-horizontal">
+            </div>
+            <div class="menu__post">
+                <div class="post" id="post">
+                    <h1 class="post__title" id="post-title"></h1>
+                    <p class="post__description" id="post-description"></p>
+                </div>
+                <div class="menu menu__vertical" id="menu-vertical">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__wrapper d-flex justify-content-between align-items-center">
+            <div class="footer__socials socials">
+                <a href="https://www.facebook.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-facebook.svg" type="image/svg+xml"
+                        class="icon icon__facebook"></object>
+                </a>
+                <a href="https://www.instagram.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-instagram.svg" type="image/svg+xml"
+                        class="icon icon__instagram"></object>
+                </a>
+                <a href="https://dribbble.com/" class="socials__item">
+                    <object data="./img/atom-icons/a-icon-dribbble.svg" type="image/svg+xml"
+                        class="icon icon__dribbble"></object>
+                </a>
+            </div>
+            <a href="./index.html" class="footer__logo logo">
+                BlogWorld
+            </a>
+            <p class="footer__paragraph paragraph paragraph-small">
+                ©2019 All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="./js/new-post.js"></script>
+    <script src="./js/mediator/renderPage.js"></script>
+    <script src="./js/mediator/ShowPosts.js"></script>
+    <script src="./js/mediator/Menu.js"></script>
+    <script src="./js/mediator/Mediator.js"></script>
+    <script src="./js/mediator/main.js"></script>
+</body>
+
+</html>
