@@ -17,7 +17,6 @@ const listOfAuthors = getAuthorsList();
 const getDataToRender = createPostsPreview(listOfAuthors)
 
 function getInfoToShow(data) {
-    console.log(data)
     let info = {};
     const currentAuthor = event.target.parentNode.previousSibling.innerText;
     const currentPost = event.target.getAttribute('data-post');
