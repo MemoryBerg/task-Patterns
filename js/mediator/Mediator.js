@@ -1,16 +1,27 @@
 class Mediator {
-    constructor(post) {
-        this.post = post;
+
+    constructor(menus, posts) {
+        this.menus = menus;
+        this.posts = posts;
+        console.log(this.posts)
     }
 
-    setPosts(newPost) {
-        this.newPost = newPost;
+    handleClickByAuthor(value) {
+        this.menus.forEach((menu) => {
+            const author = menu.authors.find(({ author }) => {
+                return author.dataset.value === value;
+            });
+            if (author) {
+                menu.toggleAuthor(author.wrapper);
+            }
+        });
     }
 
-    selectedPostInfo(title, post) {
-        this.title = title;
-        this.post = post;
-
-        this.newPost.setInfoToShow(this.title, this.post);
+    handleClickByPost(id) {
+        this.posts.setInfoToShow(id);
+        this.menus.forEach((menu) => {
+            menu.activateItem(id);
+        });
     }
 }
+

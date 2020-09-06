@@ -1,79 +1,76 @@
 .menu {
-  &__list {
-  display: flex;
-  align-items: start;
-  justify-content: space-between;
-  font-family: Roboto;
-  font-size: 20px;
+
+  & >ul {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    font-family: Roboto;
+    font-size: 20px;  
   }
 
   &__category {
     margin: 5px;
     vertical-align: top;
     width: 150px;
+    list-style: none;
+    min-height: 30px;
+  }
 
-    ul {
-      display: none;
-      min-width: 300px;
+  &__horizontal {
+    max-width: 80%;
+  }
+  
+  &__vertical {
+    flex-direction: column;
+  }
 
-      li {
-        padding: 4px 15px 0 0;
+  &__list {
+    min-width: 300px;
 
-        &:first-child {
-          padding-top: 8px;
-        }
+    li {
+      padding: 4px 15px 0 0;
+
+      &:first-child {
+        padding-top: 8px;
       }
     }
+
+    &-close {
+      display: none;
+    }
+
+    &_li-style {
+      font-size: 17px;
+    }
+  
   }
 
-  &__list_li-style {
-    font-size: 17px;
-  }
-
-  // &__category:hover {
-
-  //   ul {
-  //     display: block;
-  //   }
-  // }
-
-
-  &__list_horizontal {
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 40px 0 10px 0;
-    margin-left: 40px;
-    width: 75%;
-    max-width: 1000px;
-  }
-
-  &__list_vertical {
-    flex-direction: column;
-    padding: 40px 10px;
-    width: 24%;
-  }
-  &_vertical {
-    display: inline-flex;
-    width: 100%;
-  }
-
-  &__container {
-    display: flex;
-    flex-direction: row;
-    align-items: start;
+  &__button {
+    display: block;
   }
 
   &__item {
-
-    &_horizontal {
-      display: inline-block;
-    }
-  
+    display: block;
   }
 
   &__post {
     display: flex;
   }
+}
+
+.menu__horizontal .menu__list {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+    margin-left: 10px;
+    width: 75%;
+    max-width: 1000px;  
+}
+
+.menu__vertical .menu__list{
+    flex-direction: column;
+    padding: 40px 10px;
+    width: 24%;  
 }
 
 .post {
@@ -95,7 +92,6 @@
 }
 
 .active-post {
-  // color: $hover-color;
   text-shadow: 0 0 10px $hover-color;
 }
 

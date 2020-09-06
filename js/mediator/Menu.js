@@ -1,72 +1,51 @@
-const orientationNames = {
-    horizontal: 0,
-    vertical: 1
-}
-
-let menuNodes = {
-    vertical: document.getElementById('menu-vertical'),
-    horizontal: document.getElementById('menu-horizontal')
-}
-
 class Menu {
 
-    constructor(orientation, menuNode) {
-        this.orientation = orientation;
-        this.menuNode = menuNode;
-        this.mendiator;
+    constructor(authors) {
+        this.authors = authors;
+        this.addAuthorListener();
+        this.addWrapperListener();
     }
 
-    setMediator(mediator) {
+    set menuMediator(mediator) {
         this.mediator = mediator;
     }
 
-    addListenersToClick(obj) {
-        let menu = document.getElementById(obj.menuNode.id);
-        let mediator = this.mediator;
-        menu.addEventListener('click', async () => {
-            let target = event.target;
-            if (target.tagName === "LI") {
-                const info = await getInfoToShow(getDataToRender);
-                mediator.selectedPostInfo(info.title, info.text);
-                activateElement(target);
-            } else if (target.tagName === 'SPAN') {
-                const currentAuthor = event.target.nextSibling.getAttribute('data-set');
-                document.querySelectorAll(`[data-set=${currentAuthor}`).forEach(author => {
-                    activateAuthor(author);
-                })
-            } else {
-                Array.from(document.getElementsByClassName('menu__list_li-style')).forEach(section => {
-                    section.classList.remove('fixed')
-                })
-            }
+    addAuthorListener() {
+        this.authors.forEach(({ author }) => {
+            author.addEventListener('click', () => {
+                this.mediator.handleClickByAuthor(author.dataset.value);
+            });
         });
     }
-}
 
-function activateAuthor(el) {
-    let activeAuthors = document.getElementsByClassName('fixed');
-    if (activeAuthors.length >= 2) {
-        Array.from(activeAuthors).forEach(author => {
-            author.classList.remove('fixed');
-        })
+    toggleAuthor(node) {
+        const close = 'menu__list-close';
+        const wasClose = node.classList.contains(close);
+        this.authors.forEach(({ wrapper }) => {
+            wrapper.classList.add(close);
+        });
+        if (wasClose) {
+            node.classList.remove(close);
+        }
     }
-    el.classList.add('fixed')
-}
 
-let similarEls = [];
+    addWrapperListener() {
+        this.authors.forEach(({ wrapper }) => {
+            wrapper.addEventListener('click', (event) => {
+                this.mediator.handleClickByPost(event.target.dataset.id);
+            });
+        });
+    }
 
-function activateElement(el) {
-    Array.from(document.getElementsByClassName('active-post')).forEach(post => {
-        post.classList.remove('active-post')
-    })
-    const currentSelector = el.parentNode.getAttribute('data-set')
-    similarEls = document.querySelectorAll(`[data-set=${currentSelector}`);
-
-    similarEls.forEach(element => {
-        element.childNodes.forEach(child => {
-            if (child.getAttribute('data-post') === el.getAttribute('data-post')) {
-                child.classList.add('active-post');
-            }
-        })
-    })
+    activateItem(id) {
+        this.authors.forEach((authorNodeItem) => {
+            [].forEach.call(authorNodeItem.wrapper.children, (nodeChild) => {
+                if (nodeChild.dataset.id === id) {
+                    nodeChild.classList.add('active-post');
+                } else {
+                    nodeChild.classList.remove('active-post');
+                }
+            });
+        });
+    }
 }

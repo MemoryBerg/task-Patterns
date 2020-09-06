@@ -64,6 +64,7 @@ class Post {
             })
         }
         parentNode.append(newElement)
+        return newElement;
     }
 
 
@@ -122,10 +123,6 @@ class Post {
             music: data.music,
             href: data.href
         }
-
-        // if (!data.type) {
-        //     this._dataInfo.type = 'no type'
-        // }
 
         switch (this._dataInfo.type) {
             case 'music':
